@@ -1,3 +1,4 @@
+// menu mobile
 const btnMobile = document.getElementById('btn-mob');
 
 function toggleMenu(event) {
@@ -12,41 +13,12 @@ function toggleMenu(event) {
     event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
   }
 }
-
-
-
-
 // Adicionando eventos de clique e toque no botão de menu
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
 
 
-
-
-// Selecionando o botão
-const backToTopButton = document.getElementById('backToTop');
-
-// Função para mostrar o botão quando o usuário rolar para baixo
-window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = 'block';  // Exibe o botão
-    } else {
-        backToTopButton.style.display = 'none';  // Oculta o botão
-    }
-};
-
-// Função para rolar até o topo quando o botão for clicado
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'  // Rolagem suave
-    });
-});
-
-
-
-
-// efeito
+// efeito scroll reveal
 const myObs = new IntersectionObserver( (entries) => {
     entries.forEach( (entry) => {
         if(entry.isIntersecting){
